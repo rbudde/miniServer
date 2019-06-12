@@ -1,0 +1,21 @@
+version: '2.0'
+
+services:
+   miniserver1:
+     image: rbudde/miniserver:${VERSION}
+     restart: always
+     ports:
+      - "7001:1998"
+     command: ["-d","person.greeter=Miniserver_1","-d","delegate.address=miniserver2","-d","delegate.port=1998"]
+   miniserver2:
+     image: rbudde/miniserver:${VERSION}
+     restart: always
+     ports:
+      - "7002:1998"
+     command: ["-d","person.greeter=Miniserver_2","-d","delegate.address=miniserver3","-d","delegate.port=1998"]
+   miniserver3:
+     image: rbudde/miniserver:${VERSION}
+     restart: always
+     ports:
+      - "7003:1998"
+     command: ["-d","person.greeter=Miniserver_3","-d","delegate.address=miniserver1","-d","delegate.port=1998"]

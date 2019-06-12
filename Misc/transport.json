@@ -1,0 +1,64 @@
+{
+	"from": "2017-12-08",
+	"package": "de.budde.param",
+	"versionCheck": false,
+	"version": "1",
+	"declarations": [
+		{
+			"name": "RandomRequest",
+			"description": "for a random request: specifies the number of random numbers (how many ...) and the limit (no random >= limit)",
+			"properties": [
+				{
+					"name": "number",
+					"type": "int"
+				},
+				{
+					"name": "limit",
+					"type": "int"
+				}
+			]
+		},
+		{
+			"name": "RandomResponse",
+			"description": "the response to a random request: an array of generated random numbers",
+			"properties": [
+				{
+					"name": "ok",
+					"type": "boolean"
+				},
+				{
+					"name": "msg",
+					"type": "String"
+				},
+				{
+					"name": "detail",
+					"type": "String",
+					"required": false
+				},
+				{
+					"name": "rnd",
+					"type": "int[]"
+				}
+			]
+		},
+		{
+			"name": "GenericResponse",
+			"description": "generic response from MiniServer",
+			"properties": [
+				{
+					"name": "ok",
+					"type": "boolean"
+				},
+				{
+					"name": "msg",
+					"type": "String"
+				},
+				{
+					"name": "detail",
+					"type": "String",
+					"required": false
+				}
+			]
+		}
+	]
+}

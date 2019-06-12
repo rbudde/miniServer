@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mini Servers Javascript Page</title>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+<script src="jquery/jquery-2.1.3.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/basics.js"></script>
+<script src="lib/adminFn.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#groupSelectionParent">
+        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="groupSelectionParent">
+      <ul class="nav navbar-nav" id="groupSelection">
+        <li><a class="active navbar-default" href="#" id="doSomething"> <span class="glyphicon glyphicon-refresh"></span>do something</a></li>
+        <li><a class="active navbar-default" href="#" id="doOther1"> <span class="glyphicon glyphicon-refresh"></span>do other 1</a></li>
+        <li><a class="active navbar-default" href="#" id="doOther2"> <span class="glyphicon glyphicon-refresh"></span>do other 2</a></li>
+        <li><a class="navbar-default alert" href="#" id="toast"> &nbsp; </a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <div class="container">
+      <h3>Mini Server Output</h3>
+      Below is an output field used for demonstrating the browser-server communication. Communication is based on module COMM
+      (wrapping ajax) at browser and jersey at server side.
+    </div>
+  </div>
+  <p>
+  <p>
+  <pre id="output">- nothing -</pre>
+  <pre id="ready">undefined</pre>
+</body>
+</html>
