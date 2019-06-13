@@ -38,7 +38,7 @@ function doSomething() {
 function doOther1() {
 	clicked++;
 	LOG.info('doOther is called ' + clicked);
-	COMM.get("/rest/simple/hallo", successFn, "server-call " + clicked);
+	COMM.get("/rest/simple/hello", successFn, "server-call " + clicked);
 }
 
 function doOther2() {
@@ -50,7 +50,7 @@ function doOther2() {
 
 function init() {
     COMM.setErrorFn(errorFn);
-    $('#doSomething').onWrap('click', doSomething); // use this instead of on for robust error handling
+    $('#doSomething').onWrap('click', doSomething); // use this instead of "on" for robust error handling
     $('#doOther1').onWrap('click', doOther1);
     $('#doOther2').onWrap('click', doOther2);
 };

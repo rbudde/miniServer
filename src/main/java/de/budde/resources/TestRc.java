@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * a REST resource for testing purposes. Generates a response with status 200 or 500
+ * a REST resource for testing purposes. Generates a response with various status'
  *
  * @author rbudde
  */
