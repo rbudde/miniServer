@@ -34,7 +34,7 @@ public class MiniServerGuiceModule extends AbstractModule {
             String url = protocol + "://" + address + ":" + port;
             String urlToDelegateTo = url + "/rest/json/rndsE/";
             bind(HttpClientWrapper.class).toInstance(new HttpClientWrapper(urlToDelegateTo, null, null, null, 0)); // no credentials
-            String secret = this.serverProperties.getProperty("security.secret.16"); // bind secret depending on the existance of a property (3)
+            String secret = this.serverProperties.getProperty("security.secret.16"); // bind secret depending on the existence of a property (3)
             ISecurity security = secret == null ? new NoSecurity() : new StrongSecurity(secret, "AES");
             bind(ISecurity.class).toInstance(security);
             bind(RandomWorker.class).toInstance(new RandomWorker()); // no credentials

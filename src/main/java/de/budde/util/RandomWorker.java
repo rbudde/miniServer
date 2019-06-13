@@ -7,7 +7,7 @@ import java.util.Random;
 import de.fraunhofer.iais.dbc.DBC;
 
 /**
- * Generates random numbers. The idea is, that for simulation purposes many clients share one object of this class (it behaves like a singleton :-<).
+ * Generates random numbers. The idea is, that for simulation purposes many clients share one object of this class (it behaves like a singleton :-).
  * This is to avoid that clients get all the same sequence of random numbers (this could hide errors)
  */
 public class RandomWorker {

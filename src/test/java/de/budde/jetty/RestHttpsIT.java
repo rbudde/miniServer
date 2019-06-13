@@ -9,11 +9,13 @@ import org.eclipse.jetty.server.Server;
 import org.json.JSONObject;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.budde.util.HttpClientWrapper;
 import de.budde.util.TestHelper;
 
+@Ignore
 public class RestHttpsIT {
     private static final String ADDRESS = "0.0.0.0";
     private static final String HTTPS_PORT = "2998";
@@ -51,7 +53,7 @@ public class RestHttpsIT {
 
     @Test
     public void testHttpsGet() throws Exception {
-        String helloResponse = cwHttps.get("hello");
+        String helloResponse = cwHttps.get("simple/hello");
         String rndResponse = cwHttps.get("json/rnd");
         String rndsResponse = cwHttps.get("json/rnds/15/15");
         assertTrue(helloResponse.contains("Pid, the cavy"));

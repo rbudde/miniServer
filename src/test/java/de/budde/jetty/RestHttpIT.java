@@ -51,7 +51,7 @@ public class RestHttpIT {
 
     @Test
     public void testHttpGet() throws Exception {
-        String helloResponse = cwHttp.get("hello");
+        String helloResponse = cwHttp.get("simple/hello");
         String rndResponse = cwHttp.get("json/rnd");
         String rndsResponse = cwHttp.get("json/rnds/15/15");
         assertTrue(helloResponse.contains("Pid, the cavy"));

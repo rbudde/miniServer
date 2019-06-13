@@ -87,7 +87,7 @@ public class ServerStarter {
         int httpPort = Integer.parseInt(propertiesMergedWithComandLine.getProperty("self.http", "-1"));
         int httpsPort = Integer.parseInt(propertiesMergedWithComandLine.getProperty("self.https", "-1"));
         DBC.notNull(host, "host must NOT be null. Otherwise a server makes no sense at all :-)");
-        DBC.isTrue(httpPort <= 0 && httpsPort <= 0, "either a http or a https port must be enabled. Otherwise a  server makes no sense at all :-)");
+        DBC.isTrue(httpPort > 0 || httpsPort > 0, "either a http or a https port must be enabled. Otherwise a  server makes no sense at all :-)");
 
         String serverUrl = getServerUrlForLogging(host, httpPort, httpsPort);
         LOG.info("starting at " + serverUrl);

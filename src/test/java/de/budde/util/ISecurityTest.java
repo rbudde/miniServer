@@ -77,5 +77,4 @@ public class ISecurityTest {
         assertEquals(test, this.security.toClearText(test));
         assertEquals(test, this.security.toClearText(this.security.fromClearText(test)));
     }
-
 }
