@@ -16,7 +16,7 @@ import de.fraunhofer.iais.dbc.DBCException;
 @Provider
 public class DbcExceptionMapper implements ExceptionMapper<DBCException> {
     private static final Logger LOG = LoggerFactory.getLogger(DbcExceptionMapper.class);
-    static final String ERROR_IN_ERROR = "{\"ok\":false,\"msg\":\"Error in error processor :-)\"}";
+    static final String ERROR_IN_ERROR = "{\"ok\":false,\"_version\":\"1\",\"msg\":\"Error in error processor :-)\"}";
 
     @Override
     public Response toResponse(DBCException e1) {

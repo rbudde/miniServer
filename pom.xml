@@ -225,7 +225,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.9</version>
+				<version>0.8.6</version>
 				<configuration>
 					<excludes>
 						<exclude>src/main/generated</exclude>
@@ -250,7 +250,7 @@
 			<plugin>
 				<groupId>de.fhg.iais.tools</groupId>
 				<artifactId>TransportGenerator</artifactId>
-				<version>11.0.1</version>
+				<version>16.0.0</version>
 				<configuration>
 					<transportConfigFiles>
 						<file>Misc/transport.json</file>
@@ -304,9 +304,16 @@
 	</repositories>
 
 	<pluginRepositories>
-		<pluginRepository>
-			<id>releasesP</id>
-			<url>http://maven.iais.fraunhofer.de/artifactory/iais-public-release</url>
-		</pluginRepository>
+        <pluginRepository>
+            <id>openroberta-release</id>
+            <name>repository for the OpenRoberta OSS</name>
+            <url>http://maven.iais.fraunhofer.de/artifactory/openroberta-release</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
 	</pluginRepositories>
 </project>

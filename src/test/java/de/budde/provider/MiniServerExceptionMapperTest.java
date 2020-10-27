@@ -15,14 +15,14 @@ public class MiniServerExceptionMapperTest {
         String errorMsg = "Test message!";
         Response resp = new DbcExceptionMapper().toResponse(new DBCException(errorMsg));
         Assert.assertEquals(500, resp.getStatus());
-        GenericResponse entity = GenericResponse.make_1((String) resp.getEntity());
+        GenericResponse entity = GenericResponse.makeFromString_1((String) resp.getEntity());
         Assert.assertEquals(false, entity.getOk());
         Assert.assertEquals(errorMsg, entity.getMsg());
     }
 
     @Test
     public void testErrorInError() {
-        GenericResponse entity = GenericResponse.make_1(DbcExceptionMapper.ERROR_IN_ERROR);
+        GenericResponse entity = GenericResponse.makeFromString_1(DbcExceptionMapper.ERROR_IN_ERROR);
         Assert.assertEquals(false, entity.getOk());
         Assert.assertEquals("Error in error processor :-)", entity.getMsg());
     }

@@ -134,7 +134,7 @@ public class RandomGenerator {
         // TODO: this could be designed better. Write a specific provider? Same problem with #postDelegate
         String decrypted = this.security.toClearText(requestEntity);
         LOG.info("POST /rndsE request with entity {} decrypted from {}", decrypted, requestEntity);
-        RandomRequest request = RandomRequest.make_1(decrypted);
+        RandomRequest request = RandomRequest.makeFromString_1(decrypted);
         return createRandomResponse(request.getLimit(), request.getNumber());
     }
 

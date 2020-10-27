@@ -1,7 +1,8 @@
 {
 	"from": "2017-12-08",
 	"package": "de.budde.param",
-	"versionCheck": false,
+	"versionCheck": true,
+	"singleAssign": true,
 	"version": "1",
 	"declarations": [
 		{

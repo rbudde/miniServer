@@ -36,7 +36,7 @@ public class RandomDataProvider implements MessageBodyReader<RandomRequest> {
         WebApplicationException {
 
         String entity = convertStreamToString(entityStream);
-        return RandomRequest.make_1(entity);
+        return RandomRequest.makeFromString_1(entity);
     }
 
     static String convertStreamToString(InputStream is) {

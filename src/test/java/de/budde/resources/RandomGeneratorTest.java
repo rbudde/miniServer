@@ -22,7 +22,7 @@ public class RandomGeneratorTest {
     public void testGetRandom() {
         Response response = new RandomGenerator(this.worker, 50, 100, new NoSecurity(), null).getRandom();
         Assert.assertEquals(200, response.getStatus());
-        RandomResponse entity = RandomResponse.make_1((String) response.getEntity());
+        RandomResponse entity = RandomResponse.makeFromString_1((String) response.getEntity());
         Assert.assertTrue(entity.getOk());
         Assert.assertEquals(1, entity.getRnd().size());
         Integer rnd = entity.getRnd().get(0);
@@ -67,7 +67,7 @@ public class RandomGeneratorTest {
 
     private void checkResponseWhenOk(int limit, int number, Response response) {
         Assert.assertEquals(200, response.getStatus());
-        RandomResponse entity = RandomResponse.make_1((String) response.getEntity());
+        RandomResponse entity = RandomResponse.makeFromString_1((String) response.getEntity());
         Assert.assertTrue(entity.getOk());
         Assert.assertEquals(number, entity.getRnd().size());
         for ( Integer rnd : entity.getRnd() ) {
@@ -77,7 +77,7 @@ public class RandomGeneratorTest {
 
     private void checkResponseWhenError(Response response) {
         Assert.assertEquals(400, response.getStatus());
-        GenericResponse entity = GenericResponse.make_1((String) response.getEntity());
+        GenericResponse entity = GenericResponse.makeFromString_1((String) response.getEntity());
         Assert.assertFalse(entity.getOk());
     }
 }
