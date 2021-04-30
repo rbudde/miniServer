@@ -2,31 +2,32 @@
 
 ## Overview
 
-Many interesting systems are composed of a set of servers using http/https to communicate with each other and their environment ("distributed system").
-Each server is a small, closed, robust service. A service exposes features in a REST-like manner. Usually data exchange is based on JSON. Often these
-services are called "micro services". Usually each service runs a server in a docker container of its own to allow separation of the services and
-scaling if the resource usage changes ("container in a cluster").
+Some systems are composed of a set of servers using http/https to communicate with each other and their environment ("distributed system" made out of
+"micro services"):
+* Each service is small and robust. 
+* A service exposes features in a REST-like manner.
+* Data exchange is based on JSON.
+* Each service runs in a docker container of its own to allow separation of the services, easy scaling and simple(?) redeployment.
 
-This repository provides a simple example to *understand* and *experiment* with this kind of architecture. It tries to avoid surprises and magic.
+This repository provides a simple example to *understand* and *experiment* with this kind of architecture. It tries to avoid surprise and magic.
 After working with this repository, the lots of magic behind frameworks as Spring Boot, DropWizard etc. should be easier to understand.
 Then you may decide, to stay with lightweight frameworks as "miniserver" or switch to heavyweight frameworks.
 
-There are lots of good tutorials in the web with similar goals. You should try them and compare their design with the design here.
+There are lots of good tutorials in the web with similar goals. This is not the only one ... .
 
 ## Requirements
 
 Everything is open-source and can be changed and used for private purposes without any restriction. The prerequisites to work with
-this repository are the installation of
-* Java8.
-* Eclipse Oxygen. Older versions will do as well.
-* Git. It is great, that after installation you get a bash shell for free on Windows. Eclipse integration of Git is very good.
-* Maven3. Eclipse integration is usable.
-* Docker. Easy on linux. If you are win-based, I propose: get a linux box, do almost everything with your win system (programming, testing, ...),
-  commit to a repository, checkout on the linux box and do the Docker-related stuff there.
+this repository are the *installation* of
+* Java >= 8.
+* an IDE as Eclipse or Intellij.
+* Git. It is great, that after installation you get a bash shell for free on Windows.
+* Maven3.
+* Docker.
   
 ## Check the installation
 
-Use the Git bash on win systems. Check your PATH: you need access to both java and mvn.
+Use the Git bash on windows systems or almost any shell on linux systems. Check your PATH: you need access to both java and mvn.
 
 1. create a directory for your git repositories, e.g. "git"
 ```sh
@@ -49,8 +50,12 @@ Use the Git bash on win systems. Check your PATH: you need access to both java a
    is *not* expanded by the bash and double quotes are mandatory for win systems, but not foe linux.
    The VERSION variable must match the version value in the pom. Don't forget to stop the server later.
 ```sh
-    export VERSION=3.0.2-SNAPSHOT
+    # LINUX
+    export VERSION=3.0.3-SNAPSHOT
     java -cp "target/MiniServer-${VERSION}.jar:target/lib/*" de.budde.jetty.ServerStarter
+    # WINDOWS
+    set VERSION=3.0.3-SNAPSHOT
+    java -cp target/MiniServer-%VERSION%.jar;target/lib/* de.budde.jetty.ServerStarter
 ```
    
 5. point your browser to *http://localhost:1998/simple/rest/hello* to issue a GET request. You should see a JSON object similar to this:
